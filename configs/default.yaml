@@ -1,0 +1,26 @@
+# Default configuration
+model:
+  name: "baseline"
+  architecture: "resnet50"
+
+data:
+  batch_size: 32
+  num_workers: 4
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+training:
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  scheduler: "cosine"
+  optimizer: "adamw"
+
+logging:
+  level: "INFO"
+  use_wandb: true
+  project_name: "huggingface-project"
+
+evaluation:
+  metrics: ["accuracy", "f1_score", "precision", "recall"]
